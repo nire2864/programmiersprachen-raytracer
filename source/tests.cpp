@@ -42,6 +42,20 @@ TEST_CASE("Box volume", "[volume]")
 
 }
 
+TEST_CASE("Box print" , "[print]")
+{
+  Box b5{{4.5f,3.0f,4.0f},{-5.0f,6.3f,-4.0f}, {0.0f,1.0f,0.5f}, "Hans"};
+
+  b5.print(std::cout);
+}
+
+TEST_CASE("Sphere print" ,"[print]")
+{
+  Sphere s5{10.3f,{4.0f,5.5f,2.0f},{0.3f,0.3f,0.3f},"Otto"};
+
+  s5.print(std::cout);
+}
+
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);

@@ -1,8 +1,6 @@
 #ifndef BOX_HPP
 #define BOX_HPP
 
-#include <math.h>
-#include <glm/vec3.hpp>
 #include "shape.hpp"
 
 
@@ -10,13 +8,16 @@ class Box: public Shape {
     public:
     Box();
     Box(glm::vec3 min, glm::vec3 max);
+    Box(glm::vec3 min, glm::vec3 max, Color const& col, std::string const& name);
 
-    virtual float area() const override;
-    virtual float volume() const override;
+
+    float area() const override;
+    float volume() const override;
+    std::ostream& print(std::ostream& os) const override;
 
     private:
-    glm::vec3 min_{0.0f,0.0f,0.0f};
-    glm::vec3 max_{0.0f,0.0f,0.0f};
+    glm::vec3 min_{};
+    glm::vec3 max_{};
 
 
 

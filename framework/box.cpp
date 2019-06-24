@@ -8,6 +8,10 @@ Box::Box(glm::vec3 min, glm::vec3 max)
     :min_(min), max_(max)
     {}
 
+Box::Box(glm::vec3 min, glm::vec3 max, Color const& col, std::string const& name)
+    :Shape(name, col), min_(min), max_(max)
+    {}
+
 float Box::area() const
 {
     float h = abs(min_.y-max_.y);
@@ -21,3 +25,13 @@ float Box::volume() const
 {
     return abs(min_.x-max_.x)*abs(min_.y-max_.y)*abs(min_.z-max_.z);
 }
+
+std::ostream& Box::print(std::ostream& os) const
+{
+ Shape::print(os);
+ os <<  " ; {" << min_.x << "," << min_.y << "," << min_.z << "} ; {"
+<< max_.x << "," << max_.y << "," << max_.z << "} \n";
+
+return os;
+}
+

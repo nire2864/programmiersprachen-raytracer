@@ -56,6 +56,25 @@ TEST_CASE("Sphere print" ,"[print]")
   s5.print(std::cout);
 }
 
+TEST_CASE("Sphere intersect", "[intersect]")
+{
+  Sphere s6{2.0f, {11.0f,11.0f,11.0f},{0.3f,0.3f,0.3f},"Gandalf"};
+  Ray r1{glm::vec3{0.0f,0.0f,0.0f}, glm::vec3{1.0f, 1.0f, 1.0f}};
+  Ray r2{glm::vec3{0.0f,0.0f,0.0f}, glm::vec3{-1.0f, 0.0f, 0.0f}};
+
+  Hitpoint h1;
+  Hitpoint h2;
+
+  s6.intersect(r1,h1);
+  s6.intersect(r2,h2);
+
+  REQUIRE(h1.hit_ == true);
+  REQUIRE(h2.hit_ == false);
+
+  std::cout << "[" << h1.name_ << ", " << h1.distance << ",{" << h1.direction_.x << ", " << h1.direction_.y << ", " << h1.direction_.z
+  << "},{" << h1.color_.r << ", " << h1.color_.g << ", " << h1.color_.b <<"}]" << std::endl; 
+}
+
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);

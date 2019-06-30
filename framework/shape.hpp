@@ -4,6 +4,8 @@
 #include <math.h>
 #include <glm/vec3.hpp>
 #include "color.hpp"
+#include "ray.hpp"
+#include "hitpoint.hpp"
 
 
 

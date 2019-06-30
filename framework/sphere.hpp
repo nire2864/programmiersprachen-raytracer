@@ -12,6 +12,7 @@ class Sphere: public Shape {
     float area() const override;
     float volume() const override;
     std::ostream& print(std::ostream& os) const override;
+    bool intersect(Ray const& ray, Hitpoint &p);
 
     private:
         float radius_;

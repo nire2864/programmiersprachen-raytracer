@@ -75,6 +75,18 @@ TEST_CASE("Sphere intersect", "[intersect]")
   << "},{" << h1.color_.r << ", " << h1.color_.g << ", " << h1.color_.b <<"}]" << std::endl; 
 }
 
+TEST_CASE("tast 8")
+{
+  Sphere* sphere_pointer = new Sphere{2.0f, {11.0f,11.0f,11.0f},{0.3f,0.3f,0.3f},"Glorfindel"};
+  Shape* shape_pointer = new Sphere{2.0f, {11.0f,11.0f,11.0f},{0.3f,0.3f,0.3f},"Glaurung"};
+
+  sphere_pointer->print(std::cout);
+  shape_pointer->print(std::cout);
+
+  delete sphere_pointer;
+  delete shape_pointer;
+}
+
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);

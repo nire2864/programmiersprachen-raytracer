@@ -9,7 +9,7 @@ class Box: public Shape {
     Box();
     Box(glm::vec3 min, glm::vec3 max);
     Box(glm::vec3 min, glm::vec3 max, Color const& col, std::string const& name);
-
+    ~Box(){std::cout << " Box destruction initiated by Box-Destructor!" << std::endl;};
 
     float area() const override;
     float volume() const override;

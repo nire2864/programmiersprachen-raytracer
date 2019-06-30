@@ -2,15 +2,15 @@
 
 Box::Box()
     :min_{0.0f,0.0f,0.0f}, max_{0.0f,0.0f,0.0f}
-    {}
+    {std::cout << "Box was created by the Box-Constructor" << std::endl;}
 
 Box::Box(glm::vec3 min, glm::vec3 max)
     :min_(min), max_(max)
-    {}
+    {std::cout << "Box was created by the Box-Constructor" << std::endl;}
 
 Box::Box(glm::vec3 min, glm::vec3 max, Color const& col, std::string const& name)
     :Shape(name, col), min_(min), max_(max)
-    {}
+    {std::cout << "Box was created by the Box-Constructor" << std::endl;}
 
 float Box::area() const
 {

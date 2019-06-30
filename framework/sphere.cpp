@@ -3,15 +3,15 @@
 
 Sphere::Sphere()
     :Shape{}, radius_{0.0f}, centre_{0.0f,0.0f,0.0f}
-    {}
+    {std::cout << "Sphere was created by the Sphere-Constructor" << std::endl;}
 
 Sphere::Sphere(float radius, glm::vec3 const& centre)
     :Shape{}, radius_(radius), centre_(centre)
-    {}
+    {std::cout << "Sphere was created by the Sphere-Constructor" << std::endl;}
 
 Sphere::Sphere(float radius, glm::vec3 const& centre, Color const& col, std::string const& name)
     :Shape(name, col), radius_(radius), centre_(centre)
-    {}
+    {std::cout << "Sphere was created by the Sphere-Constructor" << std::endl;}
 
 float Sphere::area() const
 {

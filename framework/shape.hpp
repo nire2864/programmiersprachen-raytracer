@@ -22,9 +22,9 @@ class Shape {
     virtual std::ostream& print(std::ostream& os) const;
 
     Shape();
-
     Shape(std::string const& name, Color const& color);
-        
+    virtual ~Shape(){std::cout << "Shape destruction initiated by Shape-Destructor!" << std::endl;};
+
     protected:
     std::string name_;
     Color color_;

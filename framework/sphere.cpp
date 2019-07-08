@@ -43,5 +43,6 @@ bool Sphere::intersect(Ray const& ray, Hitpoint &p)
         p.distance = d;
         p.hit_ = hit;
         p.name_ = name_;
+        p.hitpoint_ = ray_to_normalize.origin + p.distance*p.direction_;
     }
 }
